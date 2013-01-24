@@ -1,0 +1,36 @@
+Tanel's Oracle Troubleshooting Scripts
+--------------------------------------
+
+Here is scripts and tools used at Tanel's Oracle Troubleshooting seminars
+from  http://tech.e2sn.com/oracle-scripts-and-tools/
+
+1. Create directories for temporary files:
+   mkdir -p ~/tpt/log
+
+2. Set up environment:
+   SQLPATH = ~/tpt
+   export SQLPATH
+
+3. Unarchive sql-scripts to apropriate directory:
+   mkdir ~/poder
+   tar zxvf http://files.e2sn.com/scripts/tpt_public_unixmac.tar.gz -C ~/poder
+
+4. Copy login.sql to your $HOME or create symlink:
+   ln -s ~/poder/login.sql login.sql
+
+Now you can use scripts from Oracle SQL*Plus:
+
+username@servername:~$ sqlplus /nolog
+
+Copyright (c) 1982, 2005, Oracle.  All rights reserved.
+
+SQL> conn db_user/db_pwd@db
+
+Connected to:
+Oracle Database 10g Release ...
+
+SQL> @poder/help [ --list | script_name ]
+         --list      - list all available scripts with short descriptions
+         script_name - get help for specific script
+
+
