@@ -2,7 +2,10 @@ Tanel's Oracle Troubleshooting Scripts
 --------------------------------------
 
 Here is scripts and tools used at Tanel's Oracle Troubleshooting seminars
-from  http://tech.e2sn.com/oracle-scripts-and-tools/
+ from  http://tech.e2sn.com/oracle-scripts-and-tools/
+
+See also Tanel Poder's blog 
+ http://blog.tanelpoder.com/2011/03/24/an-index-of-my-tpt-scripts/
 
 1. Create directories for temporary files:
    mkdir -p ~/tpt/log
@@ -15,8 +18,12 @@ from  http://tech.e2sn.com/oracle-scripts-and-tools/
    mkdir ~/poder
    tar zxvf http://files.e2sn.com/scripts/tpt_public_unixmac.tar.gz -C ~/poder
 
-4. Copy login.sql to your $HOME or create symlink:
-   ln -s ~/poder/login.sql login.sql
+4. Create you own $HOME/login.sql file:
+   @poder/login.sql
+   --
+   -- you can put your own login scripts here 
+   --
+
 
 Now you can use scripts from Oracle SQL*Plus:
 

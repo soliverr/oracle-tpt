@@ -7,6 +7,3 @@
 @@i.sql
 --
 @@login_outstanding_alerts.sql
-
--- you can put your own login scripts here
-
