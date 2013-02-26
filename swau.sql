@@ -30,8 +30,9 @@ select w.sid as s_sid,
        CASE w.state WHEN 'WAITING' THEN NVL2(w.p3text,w.p3text||'= ',null)||CASE WHEN w.p3 < 536870912 THEN to_char(w.p3) ELSE '0x'||rawtohex(w.p3raw) END ELSE null END SW_P3,
        w.seconds_in_wait as seconds
  from v$session_wait w, v$session s
-   where s.sid=w.sid 
-         and w.event <> 'SQL*Net message from client' 
+   where s.sid=w.sid
+         and w.event like '%&1%'
+         and w.event <> 'SQL*Net message from client'
          and w.event<>'rdbms ipc message'
          and not exists ( select paddr from v$bgprocess where paddr = s.paddr )
  order by w.event, w.seconds_in_wait
