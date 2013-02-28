@@ -5,10 +5,10 @@
 --
 -- Author:      Tanel Poder
 -- Copyright:   (c) http://www.tanelpoder.com
---              
+--
 -- Usage:       @ddl [schema.]<object_name_pattern>
--- 	        @ddl mytable
---	        @ddl system.table
+--              @ddl mytable
+--              @ddl system.table
 --              @ddl sys%.%tab%
 --
 --------------------------------------------------------------------------------
