@@ -1,9 +1,14 @@
--------------------------------------------------------------------------------------------
--- SCRIPT:  DF.SQL
--- PURPOSE: Show Oracle tablespace free space in Unix df style
--- AUTHOR:  Tanel Poder [ http://www.tanelpoder.com ]
--- DATE:    2003-05-01
--------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--
+-- File name:   df.sql
+-- Purpose:     Show Oracle tablespace free space in Unix df style
+--
+-- Author:      Tanel Poder
+-- Copyright:   (c) http://www.tanelpoder.com
+--
+-- Usage:       @df
+--
+--------------------------------------------------------------------------------
 
 col "% Used" for a6
 col "Used" for a22

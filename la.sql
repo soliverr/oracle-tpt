@@ -5,7 +5,7 @@
 --
 -- Author:      Tanel Poder
 -- Copyright:   (c) http://www.tanelpoder.com
---              
+--
 -- Usage:       @la <address_in_hex>
 --              @la 50BE2178
 --

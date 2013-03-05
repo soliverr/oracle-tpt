@@ -1,32 +1,33 @@
 --------------------------------------------------------------------------------
 --
 -- File name:   latchprofx.sql ( Latch Holder Profile eXtended )
+--
 -- Purpose:     Perform high-frequency sampling on V$LATCHHOLDER
---				and present a profile of latches held by sessions
+--              and present a profile of latches held by sessions
 --              with information where from Oracle kernel code a
 --              latch was held
 --
 --
 -- Author:      Tanel Poder
 -- Copyright:   (c) http://www.tanelpoder.com
---              
+--
 -- Usage:       @lhp <sid> <#samples>
--- 	        	@lhp 350 100000
---	        	@lhp % 1000000
--- Other:
---				The sampling relies on NESTED LOOP join method and having
---				V$LATCHHOLDER as the inner (probed) table. Note that on 9i
---				you may need to run this script as SYS as it looks like otherwise
---				the global USE_NL hint is not propagated down to X$ base tables
+--              @lhp 350 100000
+--              @lhp % 1000000
 --
---				If sampling always reports a single latch event even though 
---				many different events (or parameter values) are expected then 
---				the execution plan used is not right.
---
---				If you want to drill down to latch child level, uncomment the
---				l.laddr fields from select and group by list.
---				Then you can use la.sql (V$LATCH_PARENT/V$LATCH_CHILDREN) to
---				map the latch address back to latch child#
+-- Other:       The sampling relies on NESTED LOOP join method and having
+--              V$LATCHHOLDER as the inner (probed) table. Note that on 9i
+--              you may need to run this script as SYS as it looks like otherwise
+--              the global USE_NL hint is not propagated down to X$ base tables
+-- 
+--              If sampling always reports a single latch event even though 
+--              many different events (or parameter values) are expected then 
+--              the execution plan used is not right.
+-- 
+--              If you want to drill down to latch child level, uncomment the
+--              l.laddr fields from select and group by list.
+--              Then you can use la.sql (V$LATCH_PARENT/V$LATCH_CHILDREN) to
+--              map the latch address back to latch child#
 --
 --------------------------------------------------------------------------------
 

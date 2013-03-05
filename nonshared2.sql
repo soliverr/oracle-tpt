@@ -3,12 +3,12 @@
 -- File name:   nonshared2.sql
 -- Purpose:     Show the reasons why more child cursors were created instead of
 --              reusing old ones
---              
+--
 -- Author:      Tanel Poder
 -- Copyright:   (c) http://www.e2sn.com
---              
--- Usage:       @nonshared2.sql <PRINT|NOPRINT> <sqlid>
 --
+-- Usage:       @nonshared2.sql <PRINT|NOPRINT> <sqlid>
+-- 
 --              The PRINT or NOPRINT option will control whether the REASON
 --              column in XML (can be quite lengthy) will be displayed or not
 --

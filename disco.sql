@@ -5,13 +5,13 @@
 --
 -- Author:      Tanel Poder
 -- Copyright:   (c) http://www.tanelpoder.com
---              
+--
 -- Usage:       @disco <filter expression>
--- 	        @disco sid=150
---	        @disco username='SYSTEM'
+--              @disco sid=150
+--              @disco username='SYSTEM'
 --              @disco "username='APP' and program like 'sqlplus%'"
 --
--- Other:       This script doesnt actually kill or disconnect any sessions       
+-- Other:       This script doesnt actually kill or disconnect any sessions
 --              it just generates the ALTER SYSTEM DISCONNECT SESSION
 --              commands, the user can select and paste in the selected
 --              commands manually

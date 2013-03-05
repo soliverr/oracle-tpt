@@ -4,9 +4,9 @@
 -- Purpose:     Display Session Wait info for active user sessions
 --
 -- Author:      Kryazhevskikh Sergey, <soliverr@gmail.com>
--- Copyright:   
+-- Copyright:   (c) 2013
 --
--- Usage:       @swm
+-- Usage:       @swm.sql
 --
 --------------------------------------------------------------------------------
 
@@ -36,5 +36,4 @@ select w.sid as s_sid,
          and w.event<>'rdbms ipc message'
          and not exists ( select paddr from v$bgprocess where paddr = s.paddr )
  order by w.event, w.seconds_in_wait
--- w.sid 
 ;

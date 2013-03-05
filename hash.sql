@@ -6,10 +6,10 @@
 --
 -- Author:      Tanel Poder
 -- Copyright:   (c) http://www.tanelpoder.com
---              
+--
 -- Usage:       @hash
--- 	        
---	        
+--
+--
 -- Other:       Doesn't work on 9i for 2 reasons. There appears to be a bug
 --              with v$session.prev_hash_value in 9.2.x and also there's no
 --              SQL_ID nor CHILD_NUMBER column in V$SESSION in 9i.

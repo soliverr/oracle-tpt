@@ -5,7 +5,7 @@
 --
 -- Author:      Tanel Poder
 -- Copyright:   (c) http://www.tanelpoder.com
---              
+--
 -- Usage:       @sw <sid>
 --              @sw 52,110,225
 --              @sw "select sid from v$session where username = 'XYZ'"

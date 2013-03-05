@@ -5,9 +5,9 @@
 --
 -- Author:      Tanel Poder
 -- Copyright:   (c) http://www.tanelpoder.com
---              
+--
 -- Usage:       @lh <sid>
--- 	        	@lh %
+--              @lh %
 --
 --------------------------------------------------------------------------------
 SELECT

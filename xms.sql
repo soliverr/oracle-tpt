@@ -7,18 +7,19 @@
 --
 -- Author:      Tanel Poder
 -- Copyright:   (c) http://www.tanelpoder.com
---              
+--
 -- Usage:       alter session set statistics_level = all;
 --              Run the statement you want to explain
 --              @xms
---          
+--
 -- Other:       You can add a GATHER_PLAN_STATISTICS hint to the statement instead 
 --              if you dont want to use "alter session set statistics_level" 
 --              for some reason (this hint works on Oracle 10.2 and higher)
---
+-- 
 --              This script uses V$SESSION.PREV_HASH_VALUE for determining last
 --              statement executed in a session. This may not work on some 9i
 --              versions correctly. You need to use xmsh script in these cases.
+--
 --------------------------------------------------------------------------------
 
 column xms_child_number             head Ch|ld format 99

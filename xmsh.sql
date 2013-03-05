@@ -7,11 +7,11 @@
 --
 -- Author:      Tanel Poder
 -- Copyright:   (c) http://www.tanelpoder.com
---              
+--
 -- Usage:       1) alter session set statistics_level = all;
 --              2) Run the statement you want to explain
 --              3) @xmsh <hash_value> <child#>
---          
+--
 -- Other:       You can add a GATHER_PLAN_STATISTICS hint to the statement instead 
 --              if you dont want to use "alter session set statistics_level" 
 --              for some reason (this hint works on Oracle 10.2 and higher)

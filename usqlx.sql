@@ -5,13 +5,12 @@
 --
 -- Author:      Tanel Poder
 -- Copyright:   (c) http://www.tanelpoder.com
---              
+--
 -- Usage:       @usql <sid>
---          @usql 150
---          
+--              @usql 150
+--
 -- Other:       This script calls sql.sql (for displaying SQL text) and xmsh.sql
---              ^M(for displaying execution plan)           
---              
+--              (for displaying execution plan)
 --
 --------------------------------------------------------------------------------
 

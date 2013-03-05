@@ -1,11 +1,12 @@
 --------------------------------------------------------------------------------
 --
 -- File name:   s.sql
+--
 -- Purpose:     Display current Session Wait and SQL_ID info (10g+)
 --
 -- Author:      Tanel Poder
 -- Copyright:   (c) http://www.tanelpoder.com
---              
+--
 -- Usage:       @s <sid>
 --              @s 52,110,225
 --              @s "select sid from v$session where username = 'XYZ'"

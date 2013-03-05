@@ -6,7 +6,7 @@
 --
 -- Author:      Tanel Poder
 -- Copyright:   (c) http://www.tanelpoder.com
---              
+--
 -- Usage:       @latchprof <what> <sid> <latch name> <#samples>
 --              @latchprof name 350 % 100000                - monitor all latches SID 350 is holding
 --              @latchprof sid,name % library 1000000       - monitor which SIDs hold latches with "library" in their name
@@ -20,7 +20,7 @@
 --              The join in exec plan step 8 MUST be a NESTED LOOPS join, this is how
 --              the high speed sampling of changing dataset from V$LATCHHOLDER
 --              is done, otherwise you will not see correct results.
---
+-- 
 -- -----------------------------------------------------------------------------------------------
 -- | Id  | Operation                            | Name       | E-Rows |  OMem |  1Mem | Used-Mem |
 -- -----------------------------------------------------------------------------------------------
@@ -39,10 +39,10 @@
 -- |  13 |   BUFFER SORT                        |            |      1 |  9216 |  9216 | 8192  (0)|
 -- |* 14 |    FIXED TABLE FULL                  | X$KSUTM    |      1 |       |       |          |
 -- -----------------------------------------------------------------------------------------------
---
+-- 
 --              If you want to drill down to latch child level, include "laddr" in first parameter
 --              to latchprof
---
+-- 
 --              Then you can use la.sql (V$LATCH_PARENT/V$LATCH_CHILDREN) to
 --              map the latch address back to latch child# if needed
 --

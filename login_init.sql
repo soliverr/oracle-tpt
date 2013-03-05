@@ -1,14 +1,15 @@
 --------------------------------------------------------------------------------
 --
--- Name:	init.sql
--- Purpose:	Initializes sqlplus variables for 156 character terminal
---		width and other settings.
+-- File name:   login_init.sql
 --
--- Author:	Tanel Poder
--- Copyright:	(c) http://www.tanelpoder.com
+-- Purpose:     Initializes sqlplus variables for 156 character terminal
+--              width and other settings.
+--
+-- Author:      Tanel Poder
+-- Copyright:   (c) http://www.tanelpoder.com
 -- 
--- Other:	Some settings Windows specific
---		Assumes SQLPATH variable set to point to TPT script directory
+-- Other:       Some settings Windows specific
+--              Assumes SQLPATH variable set to point to TPT script directory
 --
 --------------------------------------------------------------------------------
 

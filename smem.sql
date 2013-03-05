@@ -5,10 +5,9 @@
 --
 -- Author:      Tanel Poder
 -- Copyright:   (c) http://www.tanelpoder.com
---              
+--
 -- Usage:       @smem <SID>
--- 	        
---	        
+--
 -- Other:       Uses v$process_memory which is available from Oracle 10g onwards
 --
 --------------------------------------------------------------------------------

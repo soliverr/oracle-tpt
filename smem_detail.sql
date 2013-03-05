@@ -1,18 +1,17 @@
 --------------------------------------------------------------------------------
 --
--- File name:   smem_detail.sql 
+-- File name:   smem_detail.sql
 -- Purpose:     Show process memory usage breakdown details - lookup by session ID
 --
 -- Author:      Tanel Poder
 -- Copyright:   (c) http://www.tanelpoder.com
---              
+--
 -- Usage:       @smem_detailed <SID>
--- 	        
---	        
+--
 -- Other:       Uses v$process_memory_detail which is available from Oracle 10g
 --              Also, this view is populated with help of an ORADEBUG command
 --              so you must run this script with SYSDBA privileges.
---
+-- 
 --              PROOFREAD AND TEST THIS IN A TEST ENVIRONMENT FIRST!
 --
 --------------------------------------------------------------------------------

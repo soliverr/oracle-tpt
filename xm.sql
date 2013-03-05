@@ -1,25 +1,23 @@
 --------------------------------------------------------------------------------
 --
 -- File name:   xm.sql (eXplain from Memory)
---
 -- Purpose:     Explain a SQL statements execution plan directly from library cache
 --
 -- Author:      Tanel Poder
 -- Copyright:   (c) http://www.tanelpoder.com
---              
+--
 -- Usage:       Identify the hash value and and child cursor number for the query 
 --              you want to explain (either from v$session.sql_hash_value or by
 --              searching through v$sql.sql_text
---
+-- 
 --              Then run:
 --                @xm <hash_value> <child_number>
---
+-- 
 --              For example:
 --                @xm 593239587 0      -- this would show plan for child 0 of cursor
 --                                     -- with hash value 593239587
---
 --                @xm 593239587 %      -- this would show all child cursors for the SQL
---          
+--
 --------------------------------------------------------------------------------
 
 column xms_child_number heading Ch|ld format 9 print

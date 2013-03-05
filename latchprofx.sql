@@ -8,7 +8,7 @@
 --
 -- Author:      Tanel Poder
 -- Copyright:   (c) http://www.tanelpoder.com
---              
+--
 -- Usage:       @latchprofx <what> <sid> <latch name> <#samples>
 --              @latchprofx name 350 % 100000                   - monitor all latches SID 350 is holding
 --              @latchprofx sid,name % library 1000000          - monitor which SIDs hold latches with "library" in their name
@@ -17,12 +17,12 @@
 --                                                              - monitor all sessions and latches and show
 --                                                              - latch get Where info (locations in kernel code
 --                                                              - where the latch get was done)
---
+-- 
 --              @latchprofx sid,name,hmode,func 89 "cache buffers chains" 100000
 --                                                              - monitor functions that took latch for SID 89 only
 --                                                              - and report only "cache buffers chains" latch holders
 --                                                              - also report hold mode HMODE (shared or exclusive)
---
+-- 
 --              @latchprofx sid,name,hmode,func,object % 40D993A0 100000
 --                                                              - monitor for what object's access the child latch at
 --                                                              - particular address was taken. for cache buffers chains
@@ -36,17 +36,17 @@
 --              as some info required is not externalized to V$.
 --              So you need to run this script either as SYS or
 --              need to have relevant X$ proxy views created
---
+-- 
 --              The sampling relies on NESTED LOOP join method and having
 --              X$KSUPRLAT as the inner (probed) table. 
---
+-- 
 --              If sampling always reports a single latch event even though 
 --              many different events (or parameter values) are expected then 
 --              the execution plan used is not right.
---
+-- 
 --              The join in exec plan step 9 MUST be a NESTED LOOPS join, this is how
 --              the high speed sampling is done.
---
+-- 
 -- -----------------------------------------------------------------------------------------------------
 -- | Id  | Operation                             | Name            | E-Rows |  OMem |  1Mem | Used-Mem |
 -- -----------------------------------------------------------------------------------------------------
@@ -67,9 +67,9 @@
 -- |  15 |   BUFFER SORT                         |                 |      1 |  9216 |  9216 | 8192  (0)|
 -- |* 16 |    FIXED TABLE FULL                   | X$KSUTM         |      1 |       |       |          |
 -- -----------------------------------------------------------------------------------------------------
---
+-- 
 --              If you want to drill down to latch child level, include "name" in first parameter to latchprof
---
+-- 
 --              Then you can use la.sql (V$LATCH_PARENT/V$LATCH_CHILDREN) to
 --              map the latch address back to latch child#
 --

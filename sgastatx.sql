@@ -5,14 +5,12 @@
 --
 -- Author:      Tanel Poder
 -- Copyright:   (c) http://www.tanelpoder.com
---              
+--
 -- Usage:       @sgastatx <statistic name>
--- 	        @sgastatx "free memory"
---	        @sgastatx cursor
+--              @sgastatx "free memory"
+--              @sgastatx cursor
 --
 -- Other:       The other script for querying V$SGASTAT is called sgastat.sql
---              
---              
 --
 --------------------------------------------------------------------------------
 

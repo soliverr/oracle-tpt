@@ -8,23 +8,23 @@
 -- Copyright:   (c) http://www.tanelpoder.com
 --
 -- Usage:       @waitprof <print|noprint> <sid> <e[123s]> <#samples>
---
+-- 
 --                  <print|noprint>
 --                              - whether to print P2,P3,SEQ# values or not
---
+-- 
 --                  <sid>       - session ID of session to sample
---
+-- 
 --                  <[e123s]>   - sample grouping
 --                      e - group by event name
 --                      1 - group by P1 of v$session_wait event
 --                      2 - group by P2
 --                      3 - group by P3
 --                      s - group by SEQ#
---
+-- 
 --                  <#samples>  - how many samples to take (a modern CPU can take
 --                                tens of thousands to low hundreds of k samples
 --                                per second)
---
+-- 
 --  Examples:
 --              @waitprof noprint 350 e 1000000   -- take million samples, group by event only
 --              @waitprof print 350 e123 500000 -- take 500k samples, group by event,p1,p2,p3

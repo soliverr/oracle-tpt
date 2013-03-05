@@ -1,15 +1,15 @@
 --------------------------------------------------------------------------------
 --
--- File name:   nonshared.sql   
+-- File name:   nonshared.sql
 -- Purpose:     Print reasons for non-shared child cursors from v$sql_shared_cursor
 --              in a readable format
 --
 -- Author:      Tanel Poder
 -- Copyright:   (c) http://www.tanelpoder.com
---              
+--
 -- Usage:       @nonshared <sql_id>
--- 	            @nonshared 7gf6xg9xfv3vb
---	        
+--              @nonshared 7gf6xg9xfv3vb
+--
 -- Other:       Uses modified version of Tom Kyte's printtab code 
 --              ( http://asktom.oracle.com )
 --
