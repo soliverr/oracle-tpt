@@ -33,13 +33,19 @@ short_list() {
         fn=`basename $f`
         if [ ${#fn} -lt 8 ] ; then
             r="\t\t\t"
+            n="\t"
         elif [ ${#fn} -lt 16 ] ; then
             r="\t\t"
+            n="\t\t"
         else
             r="\t"
+            n="\t\t\t"
         fi
         if grep -q -s "^-- File name:[[:space:]]\+$fn" $f ; then
-            echo -e "\t$fn$r - `sed -ne 's/-- Purpose:[[:space:]]\+\(.*\)$/\1/p' $f`" >&2
+            sed -n -e "/^-- Purpose:[[:space:]]\+/,/^--[[:space:]]*$/ {
+                        s/-- Purpose:[[:space:]]\+\(.*\)$/\t$fn$r - \1/p
+                        s/^--[[:space:]]\+\(.*\)$/$n$r   \1/p
+                       }" "$f" >&2
         fi
     done
 }
@@ -61,7 +67,7 @@ help_script() {
         exit 1
     fi
     echo -e "$fn - `sed -ne 's/-- Purpose:[[:space:]]\+\(.*\)$/\1/p' $f`" >&2
-    grep -Pzo '^-- Usage:.*(\n|.)*^--$' "$f" | sed -e 's/^--//'
+    sed -n -e "/^-- Usage:[[:space:]]\+/,/^--$/ s/^--\(.*\)/\1/p" "$f" >&2
 }
 
 # Check command line
