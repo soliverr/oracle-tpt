@@ -68,6 +68,7 @@ help_script() {
     fi
     echo -e "$fn - `sed -ne 's/-- Purpose:[[:space:]]\+\(.*\)$/\1/p' $f`" >&2
     sed -n -e "/^-- Usage:[[:space:]]\+/,/^--$/ s/^--\(.*\)/\1/p" "$f" >&2
+    sed -n -e "/^-- Other:[[:space:]]\+/,/^--$/ s/^--\(.*\)/\1/p" "$f" >&2
 }
 
 # Check command line
