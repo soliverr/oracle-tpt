@@ -41,3 +41,6 @@ SQL> @poder/help [ --list | script_name ]
          script_name - get help for specific script
 
 
+Project is hosted on SourceForge: http://sourceforge.net/projects/oracledba
+
+ -- Sergey Kryazhevskikh <soliverr@gmail.com>
