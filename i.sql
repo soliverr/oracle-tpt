@@ -16,7 +16,7 @@ col i_serial head SERIAL# for a8 new_value _i_serial
 col i_cpid head CPID for a8 new_value _i_cpid
 col i_spid head SPID for a8 new_value _i_spid
 col i_opid head OPID for a5 new_value _i_opid
-col i_host_name head HOST_NAME for a10 new_value _i_host
+col i_host_name head HOST_NAME for a12 new_value _i_host
 col i_instance_name head INST_NAME for a12 new_value _i_inst
 col i_ver head VERSION for a10
 col i_startup_day head STARTED for a8

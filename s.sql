@@ -14,8 +14,8 @@
 --
 --------------------------------------------------------------------------------
 
-col sw_event    head EVENT for a40 truncate
-col sw_p1transl head P1TRANSL for a42
+col sw_event    head EVENT for a32 truncate
+col sw_p1transl head P1TRANSL for a26
 col sw_sid      head SID for 999999
 
 col sw_p1       head P1 for a18 justify left word_wrap
@@ -32,8 +32,8 @@ col s_logt heading 'Logged in time'          format a14
 col s_prms heading 'Parameters'              format a32
 col s_wait heading 'Seconds in wait'         format a32
 col event                                    format a16
-col server                                   format a8
-col sql_id                                   format a20
+col server                                   format a10
+col sql_id                                   format a16
 
 select t1.sid||','||t1.serial# as s_sid,
        sPID,
