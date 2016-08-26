@@ -8,9 +8,9 @@
 --
 -- Usage:       Calculate average active session for current instance.
 --              It may be supplied start and end time in form 'DD.MM.YYYY'
---
+--              
 --              This script taken from "Historical Perfomance Analysis Using AWR'
---
+--              
 --              @aas [start_time] [end_time]
 --
 --------------------------------------------------------------------------------
