@@ -8,7 +8,7 @@
 # Copyright (c) 2013 Kryazhevskikh Sergey <soliverr@gmail.com>
 #
 
-SQLPATH=${SQLPATH:-`dirname $0`}
+TPT_HOME=${TPT_HOME:-`dirname $0`}
 
 #
 # Usage
@@ -28,8 +28,8 @@ __EOFF__
 # Short list SQL-scripts
 #
 short_list() {
-    echo "Short description of scripts in $SQLPATH:" >&2
-    find $SQLPATH/ -type f -name '*.sql' | sort | while read f ; do
+    echo "Short description of scripts in $TPT_HOME:" >&2
+    find $TPT_HOME/ -type f -name '*.sql' | sort | while read f ; do
         fn=`basename $f`
         if [ ${#fn} -lt 8 ] ; then
             r="\t\t\t"
@@ -61,7 +61,7 @@ help_script() {
     else
         fn=$f.sql
     fi
-    f="$SQLPATH/$fn"
+    f="$TPT_HOME/$fn"
     if [ ! -r "$f" ] ; then
         echo "File $f not found" >&2
         exit 1

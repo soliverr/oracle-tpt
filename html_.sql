@@ -19,12 +19,12 @@ BODY "" -
 TABLE "border='1' align='center' summary='Script output'" -
 SPOOL ON ENTMAP ON PREFORMAT OFF
 
-spool %SQLPATH%\tmp\output_&_connect_identifier..html
+spool &TPT_TEMP/output_&_connect_identifier..html
 
 l
 /
 
 spool off
 set markup html off spool off
-host start %SQLPATH%\tmp\output_&_connect_identifier..html
+host start &TPT_TEMP/output_&_connect_identifier..html
 set termout on

@@ -8,19 +8,16 @@
 -- Author:      Tanel Poder
 -- Copyright:   (c) http://www.tanelpoder.com
 -- 
--- Other:       Some settings Windows specific
---              Assumes SQLPATH variable set to point to TPT script directory
---
 --------------------------------------------------------------------------------
 
--- this must be here to avoid logon problems when SQLPATH env variable is unset
-	def SQLPATH=""
+-- this must be here to avoid logon problems when TPT_TEMP env variable is unset
+	def TPT_TEMP=""
 
 
 -- set SQLPATH variable to either Unix or Windows format
 
-	def SQLPATH=$SQLPATH -- (Unix)
-	--def SQLPATH=%SQLPATH% --(Windows)
+	def TPT_TEMP=$TPT_TEMP -- (Unix)
+	--def TPT_TEMP=%TPT_TEMP% --(Windows)
 
 
 	-- def _start=start   -- Windows
@@ -29,7 +26,7 @@
 
 	def _delete="rm -f"
 
-	def _tpt_tempdir=&SQLPATH/tmp
+	def _tpt_tempdir=&TPT_TEMP
 
 -- some internal variables required for TPT scripts
 
@@ -159,7 +156,7 @@ select
   , instance_name||'-'||to_char(sysdate, 'YYYYMMDD-HH24MISS') tpt_tempfile
 from v$instance;
 
-	def seminar_logfile=&SQLPATH/logs/&_tpt_tempfile..log
+	def seminar_logfile=&TPT_TEMP/&_tpt_tempfile..log
 
 -- spool sqlplus output
 	spool &seminar_logfile append

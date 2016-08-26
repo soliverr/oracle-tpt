@@ -11,36 +11,51 @@ See also Tanel Poder's blog
    mkdir -p ~/tpt/log
 
 2. Set up environment:
-   SQLPATH = ~/tpt
-   export SQLPATH
+   TPT_HOME = ~/tpt
+   TPT_TEMP = $TPT_HOME/tmp
+   export TPT_HOME TPT_TEMP
 
 3. Unarchive sql-scripts to apropriate directory:
-   mkdir ~/poder
-   tar zxvf http://files.e2sn.com/scripts/tpt_public_unixmac.tar.gz -C ~/poder
+   tar zxvf http://files.e2sn.com/scripts/tpt_public_unixmac.tar.gz -C ~/tpt
 
-4. Create you own $HOME/login.sql file:
-   @poder/login.sql
+4. Move executable script tpt_help.sh somewhere in you PATH
+   cp ~/tpt/tpt_help.sh ~/bin/tpt_help
+   chmod +x ~/bin/tpt_help
+
+5. Create you own $HOME/login.sql file:
+   @tpt/login.sql
    --
    -- you can put your own login scripts here 
    --
 
+6. Using sripts
 
-Now you can use scripts from Oracle SQL*Plus:
+   Now you can use scripts from Oracle SQL*Plus:
 
-username@servername:~$ sqlplus /nolog
+   username@servername:~$ sqlplus /nolog
 
-Copyright (c) 1982, 2005, Oracle.  All rights reserved.
+   Copyright (c) 1982, 2005, Oracle.  All rights reserved.
 
-SQL> conn db_user/db_pwd@db
+   SQL> conn db_user/db_pwd@db
 
-Connected to:
-Oracle Database 10g Release ...
+   Connected to:
+   Oracle Database 10g Release ...
 
-SQL> @poder/help [ --list | script_name ]
-         --list      - list all available scripts with short descriptions
-         script_name - get help for specific script
+   SQL> @tpt/i
+
+   USERNAME   INST_NAME    HOST_NAME    SID   SERIAL#  VERSION    STARTED  SPID     OPID  CPID     SADDR            PADDR
+   ---------- ------------ ------------ ----- -------- ---------- -------- -------- ----- -------- ---------------- ----------------
+   SYS        test         test.loc     1111  35813    10.2.0.2.0 20160819 7370     21    8986     0000000212C162B0 0000000217B3FA10
+
+   SQL> !tpt_help [ --list | script_name ]
+           --list      - list all available scripts with short descriptions
+           script_name - get help for specific script
+
+7. Project Home
+
+   Project is hosted on GitHub https://github.com/soliverr/oracle-tpt
+   and mirrored on SourceForge: http://sourceforge.net/projects/oracledba
 
 
-Project is hosted on SourceForge: http://sourceforge.net/projects/oracledba
+  -- Sergey Kryazhevskikh <soliverr@gmail.com>
 
- -- Sergey Kryazhevskikh <soliverr@gmail.com>
