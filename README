@@ -8,7 +8,7 @@ See also Tanel Poder's blog
  http://blog.tanelpoder.com/2011/03/24/an-index-of-my-tpt-scripts/
 
 1. Create directories for temporary files:
-   mkdir -p ~/tpt/log
+   mkdir -p ~/tpt/tmp
 
 2. Set up environment:
    TPT_HOME = ~/tpt
@@ -19,7 +19,7 @@ See also Tanel Poder's blog
    tar zxvf http://files.e2sn.com/scripts/tpt_public_unixmac.tar.gz -C ~/tpt
 
 4. Move executable script tpt_help.sh somewhere in you PATH
-   cp ~/tpt/tpt_help.sh ~/bin/tpt_help
+   cp ~/tpt/tpt_help ~/bin/tpt_help
    chmod +x ~/bin/tpt_help
 
 5. Create you own $HOME/login.sql file:
