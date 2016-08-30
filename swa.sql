@@ -1,1 +1,12 @@
+--------------------------------------------------------------------------------
+--
+-- File name:   swa.sql
+-- Purpose:     Display all current Session Wait info
+--
+-- Author:      Tanel Poder
+-- Copyright:   (c) http://www.tanelpoder.com
+--
+-- Usage:       @swa
+--
+--------------------------------------------------------------------------------
 @@sw "select sid from v$session"

@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 --
--- File name:   sw.sql
+-- File name:   sw2.sql
 -- Purpose:     Display current Session Wait info
 --
 -- Author:      Tanel Poder
