@@ -14,8 +14,10 @@ col "% Used" for a6
 col "Used" for a22
 
 select tablespace_name
+      ,ta_mb "ExtendMB"
       ,t_mb "TotalMB"
       ,t_mb - f_mb "UsedMB"
+      --,fa_mb "FreeMB"
       ,f_mb "FreeMB"
       ,lpad(ceil((1 - f_mb / decode(t_mb, 0, 1, t_mb)) * 100) || '%', 6) "% Used"
       ,t_ext "Ext"
@@ -23,11 +25,16 @@ select tablespace_name
 from (
 select t.tablespace_name as tablespace_name,
        t.maxmb,
-       t.mb,
+       nvl(t.mb, 0) as t_mb,
+       -- Maximum with autoextend
        case when t.ext = 'YES' then nvl(t.maxmb, nvl(t.mb, 0))
             else nvl(t.mb, 0)
-       end as t_mb,
+       end as ta_mb,
        nvl(f.mb,0) as f_mb,
+       -- Free with autoextend
+       case when t.ext = 'YES' then nvl(t.maxmb, nvl(t.mb, 0)) - nvl(f.mb, 0)
+            else nvl(t.mb, 0) - nvl(f.mb, 0)
+       end as fa_mb,
        t.ext as t_ext
 from (
   select tablespace_name, trunc(sum(bytes)/1048576) MB
@@ -48,5 +55,6 @@ from (
 ) t
 where t.tablespace_name = f.tablespace_name (+)
 )
-order by tablespace_name;
+order by tablespace_name
+;
 
