@@ -14,6 +14,7 @@ col "% Used" for a6
 col "Used" for a22
 
 select tablespace_name
+      ,t_numf "NumOfFiles"
       ,ta_mb "ExtendMB"
       ,t_mb "TotalMB"
       ,t_mb - f_mb "UsedMB"
@@ -35,7 +36,8 @@ select t.tablespace_name as tablespace_name,
        case when t.ext = 'YES' then nvl(t.maxmb, nvl(t.mb, 0)) - nvl(f.mb, 0)
             else nvl(t.mb, 0) - nvl(f.mb, 0)
        end as fa_mb,
-       t.ext as t_ext
+       t.ext as t_ext,
+       t.numf as t_numf
 from (
   select tablespace_name, trunc(sum(bytes)/1048576) MB
   from dba_free_space
@@ -45,11 +47,11 @@ from (
   from v$temp_space_header
   group by tablespace_name
 ) f, (
-  select tablespace_name, trunc(sum(bytes)/1048576) MB, trunc(sum(maxbytes)/1048576) MaxMB, max(autoextensible) ext
+  select tablespace_name, trunc(sum(bytes)/1048576) MB, trunc(sum(maxbytes)/1048576) MaxMB, max(autoextensible) ext, count(file_id) NumF
   from dba_data_files
   group by tablespace_name
  union all
-  select tablespace_name, trunc(sum(bytes)/1048576) MB, trunc(sum(maxbytes)/1048576) MaxMB, max(autoextensible) ext
+  select tablespace_name, trunc(sum(bytes)/1048576) MB, trunc(sum(maxbytes)/1048576) MaxMB, max(autoextensible) ext, count(file_id) NumF
   from dba_temp_files
   group by tablespace_name
 ) t
