@@ -1,14 +1,14 @@
 col du_MB head MB FOR 99999999.9
 col owner format a24
 select
-    owner
-  , sum(bytes)/1048576 du_MB
+    u.username owner
+  , sum(nvl(s.bytes, 0))/1048576 du_MB
 from
-    dba_segments
+    dba_users u left join dba_segments s on (u.username = s.owner)
 where
-    lower(owner) like lower('&1')
+    lower(u.username) like lower('&1')
 group by
-    owner
+    u.username
 order by
     du_MB desc
 /
