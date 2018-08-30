@@ -1,1 +1,1 @@
-dumpvar.sql
+oradebug dumpvar &1 &2
